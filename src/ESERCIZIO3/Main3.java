@@ -6,7 +6,6 @@ public class Main3 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Creazione di un'istanza di ContoOnline
         System.out.print("Inserisci il nome del titolare del conto: ");
         String titolare = scanner.nextLine();
 
