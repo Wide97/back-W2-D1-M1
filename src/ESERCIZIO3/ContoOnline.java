@@ -9,13 +9,20 @@ public class ContoOnline extends ContoCorrente {
     }
 
     public void stampaSaldo() {
-        System.out.println("Titolare: " + titolare + "Saldo: " + saldo + "Num movimenti :" + nMovimenti + "Massimo movimenti:" +
-                maxMovimenti + "max prelievo possibile: " + maxPrelievo );
+        System.out.println("Titolare: " + getTitolare() +
+                "\nSaldo: " + restituisciSaldo() +
+                "\nNumero movimenti: " + getnMovimenti() +
+                "\nMassimo movimenti: " + getMaxMovimenti() +
+                "\nMassimo prelievo possibile: " + maxPrelievo);
     }
 
+    @Override
     public void preleva(double x) {
-        if (x <= maxPrelievo) {
-            super.preleva(x);
+        if (x > maxPrelievo) {
+            System.out.println("Errore: il prelievo supera il massimo consentito di " + maxPrelievo + ".");
+            return;
         }
+        super.preleva(x);
     }
 }
+
